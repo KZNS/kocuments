@@ -18,6 +18,8 @@
   - [7.1. 查看历史](#71-查看历史)
   - [7.2. 版本回退](#72-版本回退)
   - [7.3. 比较](#73-比较)
+  - [7.4. 危险操作](#74-危险操作)
+    - [7.4.1. 修改历史 commits 中的用户名和邮箱](#741-修改历史-commits-中的用户名和邮箱)
 - [8. 使用建议](#8-使用建议)
   - [8.1. 分支管理](#81-分支管理)
   - [8.2. commit message](#82-commit-message)
@@ -147,6 +149,28 @@ git reset --hard HEAD^
 
 ```shell
 git diff
+```
+
+### 7.4. 危险操作
+
+#### 7.4.1. 修改历史 commits 中的用户名和邮箱
+
+```sh
+git filter-branch -f --env-filter '
+OLD_EMAIL="原来的邮箱"
+CORRECT_NAME="现在的名字"
+CORRECT_EMAIL="现在的邮箱"
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$CORRECT_NAME"
+    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi
+' --tag-name-filter cat -- --branches --tags
 ```
 
 ## 8. 使用建议
