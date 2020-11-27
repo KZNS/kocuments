@@ -20,6 +20,7 @@
   - [7.3. 比较](#73-比较)
   - [7.4. 危险操作](#74-危险操作)
     - [7.4.1. 修改历史 commits 中的用户名和邮箱](#741-修改历史-commits-中的用户名和邮箱)
+    - [7.4.2. 强制上传到远端并覆盖](#742-强制上传到远端并覆盖)
 - [8. 使用建议](#8-使用建议)
   - [8.1. 分支管理](#81-分支管理)
   - [8.2. commit message](#82-commit-message)
@@ -171,6 +172,12 @@ then
     export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
 fi
 ' --tag-name-filter cat -- --branches --tags
+```
+
+#### 7.4.2. 强制上传到远端并覆盖
+
+```sh
+git push --force
 ```
 
 ## 8. 使用建议
