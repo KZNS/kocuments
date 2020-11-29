@@ -3,6 +3,9 @@
 本文包含使用git工作时的一些推荐工作流程与规范。
 
 - [1. 分支管理](#1-分支管理)
+  - [1.1. Git Flow](#11-git-flow)
+  - [1.2. GitHub Flow](#12-github-flow)
+  - [1.3. Tips](#13-tips)
 - [2. commit message](#2-commit-message)
   - [2.1. Header](#21-header)
     - [2.1.1. type](#211-type)
@@ -15,6 +18,14 @@
   - [2.4. Revert](#24-revert)
 
 ## 1. 分支管理
+
+这里整理了几种著名的git工作流程，并在最后给出了一些使用建议。
+
+### 1.1. Git Flow
+
+### 1.2. GitHub Flow
+
+### 1.3. Tips
 
 为了优化分支图、方便**随意commit**和干一半做别的功能  
 使用一个新的分支来完成修改（一项功能的添加）：  
@@ -40,6 +51,8 @@
 |/
 *    the first commit
 ```
+
+如果你在开发的过程中，需要使用其他人新写出来的feature，使用rebase移动分支的起点。
 
 ## 2. commit message
 
