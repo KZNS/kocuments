@@ -73,15 +73,42 @@
 
 #### 2.1.1. type
 
-type用于说明 commit 的类别，只允许使用下面7个标识。
+type 用于说明 commit 的类别，可以根据需求在以下的 type 中选择，或者自定义新的类别。
 
-- feat：新功能（feature）
-- fix：修补bug
-- docs：文档（documentation）
-- style： 格式（不影响代码运行的变动）
-- refactor：重构（即不是新增功能，也不是修改bug的代码变动）
-- test：增加测试
-- chore：构建过程或辅助工具的变动
+- code:
+  - feat
+    - 新功能
+    - A new feature
+  - fix
+    - 修补bug
+    - A bug fix
+  - refactor
+    - 代码重构
+    - A code change that neither fixes a bug nor adds a feature
+  - style
+    - 代码格式改变
+    - Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- deployment:
+  - test
+    - 添加缺失的测试
+    - Adding missing tests or correcting existing tests
+  - build
+    - 对编译或者依赖的变动
+    - Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+  - ci
+    - 持续集成的修改
+    - Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+- maintain:
+  - docs
+    - 文档的改变
+    - Documentation only changes
+  - chore
+    - 辅助工具的改变
+    - Changes to auxiliary tool
+- other:
+  - perf
+    - 性能提升的改变
+    - A code change that improves performance
 
 #### 2.1.2. scope
 
